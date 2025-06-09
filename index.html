@@ -6,38 +6,33 @@
   <title>PICCIONI MORTI</title>
   <style>
     @font-face {
-      font-family: 'Burgues Script';
-      src: url('Burgues Script Regular.otf') format('opentype');
+      font-family: 'Pcfont';
+      src: url('fonts/Pcfont-Regular.woff2') format('woff2');
       font-weight: normal;
       font-style: normal;
     }
 
-    @font-face {
-      font-family: 'Eclassio';
-      src: url('Eclassio-2vq53.woff') format('opentype');
-      font-weight: normal;
-      font-style: normal;
+    body, h1, p, * {
+      font-family: 'Pcfont', sans-serif !important;
+      color: white;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-  margin: 0;
-  padding: 0;
-  background-image: url('images/pexels-mariano-di-luch-679379189-29544928.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; 
-  font-family: sans-serif;
-  color: white;
+      background-image: url('images/pexels-mariano-di-luch-679379189-29544928.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
 
-h1 {
-  font-family: 'Burgues', cursive;
-  font-size: 4rem;
-  margin-top: 20px; /* distanza dal bordo superiore */
-  background-color: rgba(0, 0, 0, 0.4); /* effetto vetro fumé */
-  padding: 20px;
-  border-radius: 10px;
-}
+    h1 {
+      font-size: 4rem;
+      margin-top: 20px;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 10px;
+    }
 
     @media (max-width: 600px) {
       h1 {
