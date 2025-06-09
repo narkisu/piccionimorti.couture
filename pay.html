@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Merch - PICCIONI MORTI</title>
+  <title>Pagamento - PICCIONI MORTI</title>
   <style>
     @font-face {
       font-family: 'Pcfont';
@@ -12,30 +12,34 @@
       font-style: normal;
     }
 
-    body, h1, p, * {
+    body, h1, h2, p, * {
       font-family: 'Pcfont', sans-serif !important;
       color: white;
       margin: 0;
       padding: 0;
+      background-color: #111;
     }
 
     body {
-      background-image: url('images/pexels-mariano-di-luch-679379189-29544928.jpg');
+      background-image: url('images/pexels-mariano-di-luch-679379189-679379189-29544928.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
+      padding: 20px;
     }
 
     nav {
       background-color: rgba(0,0,0,0.6);
       padding: 10px;
       text-align: center;
+      margin-bottom: 20px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       margin: 0 15px;
+      font-weight: bold;
     }
 
     nav a:hover {
@@ -43,11 +47,12 @@
     }
 
     .content {
-      background-color: rgba(0, 0, 0, 0.4); /* sfondo fumé */
-      padding: 20px;
-      border-radius: 10px;
-      margin: 40px auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px 20px;
+      border-radius: 15px;
       max-width: 800px;
+      margin: 0 auto 40px auto;
+      box-shadow: 0 0 15px #ff3c3c;
       text-align: center;
     }
 
@@ -56,17 +61,55 @@
       margin-bottom: 20px;
     }
 
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-weight: normal;
+      color: #ff3c3c;
+    }
+
     p {
       font-size: 1.2rem;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    iframe {
+      width: 100%;
+      height: 1100px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ff3c3c;
+    }
+
+    .btn-ordina {
+      display: inline-block;
+      background: #ff3c3c;
+      color: white;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+
+    .btn-ordina:hover {
+      background: #e03434;
     }
 
     @media (max-width: 600px) {
       h1 {
         font-size: 2.2rem;
       }
-
       p {
         font-size: 1rem;
+      }
+      .btn-ordina {
+        padding: 12px 30px;
+        font-size: 1.1rem;
       }
     }
   </style>
@@ -75,12 +118,21 @@
   <nav>
     <a href="index.html">Home</a> |
     <a href="merch.html">Merch</a> |
-    <a href="pay.html">Pay</a>
+    <a href="pay.html">Payment</a>
   </nav>
 
   <div class="content">
-    <h1>PAYMENT</h1>
-    <p>prices</p>
+    <h1>Ordina il merch - PICCIONI MORTI</h1>
+    <h2>Pagamento tramite bonifico bancario</h2>
+    <p>
+      Compila il modulo d’ordine qui sotto oppure clicca "ORDINA ORA" per aprirlo in una nuova finestra.<br/>
+      Per ora accetto solo bonifico, ecco l'IBAN da tenere a portata di mano:<br/>
+      <strong>IT71 E036 6901 6001 5804 0354 690</strong>
+    </p>
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdr-y5zHJEVICv7XDUH8-kIxsM8pijNUfSwrS8TviMB2xZRmA/viewform?embedded=true" allowfullscreen></iframe>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr-y5zHJEVICv7XDUH8-kIxsM8pijNUfSwrS8TviMB2xZRmA/viewform" target="_blank" rel="noopener noreferrer" class="btn-ordina" style="margin-top: 25px; display: inline-block;">ORDINA ORA</a>
   </div>
 </body>
 </html>
