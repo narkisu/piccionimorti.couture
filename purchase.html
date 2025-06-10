@@ -181,12 +181,12 @@
       if(currentLang === 'ITA') {
         currentLang = 'ENG';
         updateSwitcher(currentLang);
-        let newPath = window.location.pathname.replace('/it/', '/en/');
+        let newPath = window.location.pathname.replace('/ita/', '/en/');
         window.location.pathname = newPath;
       } else {
         currentLang = 'ITA';
         updateSwitcher(currentLang);
-        let newPath = window.location.pathname.replace('/en/', '/it/');
+        let newPath = window.location.pathname.replace('/en/', '/ita/');
         window.location.pathname = newPath;
       }
     });
