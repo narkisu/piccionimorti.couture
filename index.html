@@ -78,11 +78,117 @@
       color: #111;
       animation: none;
     }
+
+    /* FAQ Styles */
+    .faq {
+      margin-top: 60px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .faq h2 {
+      font-size: 2rem;
+      color: #ff3c3c;
+      margin-bottom: 20px;
+    }
+
+    .faq-item {
+      text-align: left;
+      border-bottom: 1px solid #ff3c3c;
+      margin-bottom: 10px;
+    }
+
+    .faq-question {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.1rem;
+      padding: 15px;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      font-family: 'Pcfont', sans-serif;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 15px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding-bottom: 10px;
+    }
+
+    .shipping-note {
+      margin-top: 20px;
+      color: #ff9999;
+      font-size: 0.9rem;
+      user-select: none;
+    }
   </style>
 </head>
 <body>
   <h1 class="logo">PICCIONI MORTI</h1>
   <p class="subtitle">underground typa shi</p>
   <a href="merch.html" class="pulse-button">ENTRA NEL NIDO</a>
+  <p class="shipping-note">
+    *Spedizione NON inclusa, i costi variano.
+  </p>
+
+  <section id="faq" class="faq">
+    <h2>Domande Frequenti</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Spedite ovunque?</button>
+      <div class="faq-answer">
+        <p>Dipende. Spedisco in tutta Italia, ma i costi variano in base a dove vivi. Per ora nessuna spedizione fuori Italia. </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Quanto ci mette ad arrivare?</button>
+      <div class="faq-answer">
+        <p>Dipende. Di solito spediamo in 3–7 giorni lavorativi. Ma è un progetto artigianale, non sono Amazon Prime.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Come vengono prodotti?</button>
+      <div class="faq-answer">
+        <p>Ogni pezzo è cucito a mano, niente roba fast fashion.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Posso fare un reso?</button>
+      <div class="faq-answer">
+        <p>Solo se ti arriva distrutto. In quel caso, scrivimi entro 7 giorni.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">È possibile personalizzarlo?</button>
+      <div class="faq-answer">
+        <p>Se hai un'idea, scrivimi. Se gasa, la cucio.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
