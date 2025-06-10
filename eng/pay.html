@@ -82,7 +82,7 @@
       box-shadow: 0 0 10px #ff3c3c;
     }
 
-    .btn-ordina {
+    .btn-order {
       display: inline-block;
       background: #ff3c3c;
       color: white;
@@ -96,7 +96,7 @@
       user-select: none;
     }
 
-    .btn-ordina:hover {
+    .btn-order:hover {
       background: #e03434;
     }
 
@@ -107,7 +107,7 @@
       p {
         font-size: 1rem;
       }
-      .btn-ordina {
+      .btn-order {
         padding: 12px 30px;
         font-size: 1.1rem;
       }
@@ -145,17 +145,17 @@
   </nav>
 
   <div class="content">
-    <h1>Order merch - PICCIONI MORTI</h1>
-    <h2>Payment by bank transfer</h2>
+    <h1>Order Merch - PICCIONI MORTI</h1>
+    <h2>Payment via bank transfer</h2>
     <p>
       Fill out the order form below or click "ORDER NOW" to open it in a new window.<br/>
-      For now I accept only bank transfers, keep this IBAN handy:<br/>
+      Currently, I only accept bank transfers. Have this IBAN handy:<br/>
       <strong>IT71 E036 6901 6001 5804 0354 690</strong>
     </p>
 
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdr-y5zHJEVICv7XDUH8-kIxsM8pijNUfSwrS8TviMB2xZRmA/viewform?embedded=true" allowfullscreen></iframe>
 
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr-y5zHJEVICv7XDUH8-kIxsM8pijNUfSwrS8TviMB2xZRmA/viewform" target="_blank" rel="noopener noreferrer" class="btn-ordina" style="margin-top: 25px; display: inline-block;">ORDER NOW</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr-y5zHJEVICv7XDUH8-kIxsM8pijNUfSwrS8TviMB2xZRmA/viewform" target="_blank" rel="noopener noreferrer" class="btn-order" style="margin-top: 25px; display: inline-block;">ORDER NOW</a>
   </div>
 
   <script>
@@ -163,30 +163,32 @@
     const flag = document.getElementById('flag');
     const langText = document.getElementById('lang-text');
 
-    let currentLang = 'ENG'; // questa è la pagina ENG
+    let currentLang = 'ENG'; // questa è la pagina EN
 
     function updateSwitcher(lang) {
-      if(lang === 'ENG') {
-        flag.src = 'https://flagcdn.com/16x12/gb.png';
-        langText.textContent = 'ENG';
-      } else {
+      if(lang === 'ITA') {
         flag.src = 'https://flagcdn.com/16x12/it.png';
         langText.textContent = 'ITA';
+      } else {
+        flag.src = 'https://flagcdn.com/16x12/gb.png';
+        langText.textContent = 'ENG';
       }
     }
 
     updateSwitcher(currentLang);
 
     langSwitcher.addEventListener('click', () => {
-      if(currentLang === 'ITA') {
-        currentLang = 'ENG';
-        updateSwitcher(currentLang);
-        let newPath = window.location.pathname.replace('/ita/', '/eng/');
-        window.location.pathname = newPath;
-      } else {
+      if(currentLang === 'ENG') {
         currentLang = 'ITA';
         updateSwitcher(currentLang);
+        // Cambia /eng/ in /ita/
         let newPath = window.location.pathname.replace('/eng/', '/ita/');
+        window.location.pathname = newPath;
+      } else {
+        currentLang = 'ENG';
+        updateSwitcher(currentLang);
+        // Cambia /ita/ in /eng/
+        let newPath = window.location.pathname.replace('/ita/', '/eng/');
         window.location.pathname = newPath;
       }
     });
