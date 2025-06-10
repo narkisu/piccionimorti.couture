@@ -183,12 +183,12 @@
         updateSwitcher(currentLang);
         // Vai alla versione inglese
         // Cambia la path rimuovendo /it/ e sostituendola con /en/
-        let newPath = window.location.pathname.replace('/it/', '/en/');
+        let newPath = window.location.pathname.replace('/ita/', '/en/');
         window.location.pathname = newPath;
       } else {
         currentLang = 'ITA';
         updateSwitcher(currentLang);
-        let newPath = window.location.pathname.replace('/en/', '/it/');
+        let newPath = window.location.pathname.replace('/en/', '/ita/');
         window.location.pathname = newPath;
       }
     });
