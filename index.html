@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>PICCIONI MORTI</title>
   <style>
     @font-face {
       font-family: 'Pcfont';
       src: url('font/Pcfont-Regular.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
     }
 
     body {
+      margin: 0;
+      padding: 0;
       font-family: 'Pcfont', sans-serif;
-      background-color: #111;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+                  url('images/pexels-mariano-di-luch-679379189-29544928.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: white;
       text-align: center;
-      padding: 50px 20px;
-      background-image: url('images/pexels-mariano-di-luch-679379189-29544928.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 30px;
-      text-shadow: 0 0 10px #ff3c3c;
+      font-size: 4rem;
+      text-shadow: 0 0 15px #ff3c3c;
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 15px #ff3c3c; transform: scale(1); }
+      50% { text-shadow: 0 0 30px #ff3c3c; transform: scale(1.05); }
+      100% { text-shadow: 0 0 15px #ff3c3c; transform: scale(1); }
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin: 20px 0 40px;
     }
 
     a {
       display: inline-block;
-      margin: 15px 20px;
-      padding: 15px 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 15px 40px;
       font-size: 1.2rem;
-      background-color: #ff3c3c;
       color: white;
-      transition: background 0.3s ease;
+      background-color: #ff3c3c;
+      text-decoration: none;
+      border-radius: 30px;
       box-shadow: 0 0 10px #ff3c3c;
+      transition: all 0.3s ease;
     }
 
     a:hover {
       background-color: #e03434;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      a {
-        padding: 12px 20px;
-        font-size: 1rem;
-      }
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ff3c3c;
     }
   </style>
 </head>
 <body>
-  <h1>Benvenuto su PICCIONI MORTI</h1>
-  <a href="ita/index.html">🕊️ Entra nel sito</a>
-  <a href="merch.html">🛒 Guarda il Merch</a>
+  <h1>PICCIONI MORTI</h1>
+  <p>underground typa shi</p>
+  <a href="ita/index.html">ENTRA NEL NIDO</a>
 </body>
 </html>
