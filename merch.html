@@ -36,6 +36,7 @@
       color: white;
       text-decoration: none;
       margin: 0 15px;
+      font-weight: bold;
     }
 
     nav a:hover {
@@ -43,7 +44,7 @@
     }
 
     .content {
-      background-color: rgba(0, 0, 0, 0.4); /* sfondo fumé */
+      background-color: rgba(0, 0, 0, 0.4);
       padding: 20px;
       border-radius: 10px;
       margin: 40px auto;
@@ -69,18 +70,76 @@
         font-size: 1rem;
       }
     }
+
+    #lang-switcher {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Pcfont', sans-serif;
+      user-select: none;
+      z-index: 1000;
+      background: rgba(0,0,0,0.6);
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
+  <!-- Language switcher -->
+  <div id="lang-switcher">
+    <img id="flag" src="https://flagcdn.com/16x12/gb.png" alt="ENG" width="16" height="12" />
+    <span id="lang-text">ENG</span>
+  </div>
+
   <nav>
     <a href="index.html">Home</a> |
     <a href="merch.html">Merch</a> |
-    <a href="pay.html">Pay</a>
+    <a href="ita/pay.html">Pay ITA</a> |
+    <a href="eng/pay.html">Pay ENG</a>
   </nav>
 
   <div class="content">
     <h1>MERCH</h1>
     <p>ushankas</p>
   </div>
+
+  <script>
+    const langSwitcher = document.getElementById('lang-switcher');
+    const flag = document.getElementById('flag');
+    const langText = document.getElementById('lang-text');
+
+    // default lingua: inglese (perché siamo in merch.html root)
+    let currentLang = 'ENG';
+
+    function updateSwitcher(lang) {
+      if(lang === 'ITA') {
+        flag.src = 'https://flagcdn.com/16x12/it.png';
+        langText.textContent = 'ITA';
+      } else {
+        flag.src = 'https://flagcdn.com/16x12/gb.png';
+        langText.textContent = 'ENG';
+      }
+    }
+
+    updateSwitcher(currentLang);
+
+    langSwitcher.addEventListener('click', () => {
+      if(currentLang === 'ENG') {
+        currentLang = 'ITA';
+        updateSwitcher(currentLang);
+        // switcha a ita merch.html —> ita/index.html oppure ita/merch.html (se esiste)
+        // qui scegliamo di mandare a ita/index.html
+        window.location.href = 'ita/index.html';
+      } else {
+        currentLang = 'ENG';
+        updateSwitcher(currentLang);
+        window.location.href = 'index.html';
+      }
+    });
+  </script>
 </body>
 </html>
