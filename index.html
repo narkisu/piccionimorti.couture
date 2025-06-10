@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,64 +12,58 @@
       font-style: normal;
     }
 
-    body, h1, p, * {
-      font-family: 'Pcfont', sans-serif !important;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
+      font-family: 'Pcfont', sans-serif;
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
       background-image: url('images/pexels-mariano-di-luch-679379189-29544928.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
 
-    nav {
-      background-color: rgba(0,0,0,0.6);
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
     h1 {
-      font-size: 4rem;
-      margin-top: 20px;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 20px;
-      border-radius: 10px;
+      font-size: 3rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #ff3c3c;
+    }
+
+    a {
+      display: inline-block;
+      margin: 15px 20px;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      background-color: #ff3c3c;
+      color: white;
+      transition: background 0.3s ease;
+      box-shadow: 0 0 10px #ff3c3c;
+    }
+
+    a:hover {
+      background-color: #e03434;
     }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
       }
-
-      p {
+      a {
+        padding: 12px 20px;
         font-size: 1rem;
       }
     }
   </style>
 </head>
-
 <body>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="merch.html">Merch</a> |
-    <a href="pay.html">Pay</a>
-  </nav>
-
-  <h1>PICCIONI MORTI</h1>
-  <p>die young, own the night.</p>
+  <h1>Benvenuto su PICCIONI MORTI</h1>
+  <a href="ita/index.html">🇮🇹 Entra in Italiano</a>
+  <a href="eng/index.html">🇬🇧 Enter in English</a>
+  <br>
+  <a href="merch.html">🛒 Guarda il Merch</a>
 </body>
 </html>
