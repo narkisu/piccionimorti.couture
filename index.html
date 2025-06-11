@@ -25,14 +25,63 @@
       margin: 0;
     }
 
+    @keyframes pulse {
+      0%, 100% {
+        text-shadow: 0 0 5px #ff3c3c;
+        color: #ff3c3c;
+      }
+      50% {
+        text-shadow: 0 0 15px #ff0000;
+        color: #ff6666;
+      }
+    }
+
+    @keyframes glitchMove {
+      0% {
+        transform: translate(-50%, -50%) skew(0deg, 0deg) scale(1);
+        opacity: 0.08;
+      }
+      33% {
+        transform: translate(-49%, -51%) skew(0.2deg, -0.2deg) scale(1.01);
+        opacity: 0.1;
+      }
+      66% {
+        transform: translate(-51%, -49%) skew(-0.2deg, 0.2deg) scale(1.02);
+        opacity: 0.09;
+      }
+      100% {
+        transform: translate(-50%, -50%) skew(0deg, 0deg) scale(1);
+        opacity: 0.08;
+      }
+    }
+
+    .logo-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .logo-container img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.08;
+      width: 400px;
+      z-index: 0;
+      animation: glitchMove 3s infinite alternate;
+      pointer-events: none;
+    }
+
     h1.logo {
       font-size: 4rem;
-      margin-bottom: 10px;
       animation: pulse 2s infinite;
       cursor: default;
       user-select: none;
       text-shadow: 0 0 5px #ff3c3c;
       color: #ff3c3c;
+      position: relative;
+      z-index: 1;
     }
 
     .subtitle {
@@ -43,17 +92,6 @@
       margin-bottom: 40px;
       text-shadow: 0 0 5px #ff3c3c;
       user-select: none;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        text-shadow: 0 0 5px #ff3c3c;
-        color: #ff3c3c;
-      }
-      50% {
-        text-shadow: 0 0 15px #ff0000;
-        color: #ff6666;
-      }
     }
 
     a.pulse-button {
@@ -79,7 +117,6 @@
       animation: none;
     }
 
-    /* FAQ Styles */
     .faq {
       margin-top: 60px;
       background-color: rgba(0, 0, 0, 0.7);
@@ -135,7 +172,12 @@
   </style>
 </head>
 <body>
-  <h1 class="logo">PICCIONI MORTI</h1>
+
+  <div class="logo-container">
+    <img src="images/logo.png" alt="logo" />
+    <h1 class="logo">PICCIONI MORTI</h1>
+  </div>
+
   <p class="subtitle">underground typa shi</p>
   <a href="merch.html" class="pulse-button">ENTRA NEL NIDO</a>
   <p class="shipping-note">
@@ -148,7 +190,7 @@
     <div class="faq-item">
       <button class="faq-question">Spedite ovunque?</button>
       <div class="faq-answer">
-        <p>Dipende. Spedisco in tutta Italia, ma i costi variano in base a dove vivi. La spedizione avverrà solo dopo il ricevimento del bonificio, per ora nessuna spedizione fuori Italia. </p>
+        <p>Dipende. Spedisco in tutta Italia, ma i costi variano in base a dove vivi. La spedizione avverrà solo dopo il ricevimento del bonifico, per ora nessuna spedizione fuori Italia.</p>
       </div>
     </div>
 
