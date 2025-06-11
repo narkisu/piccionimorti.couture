@@ -23,11 +23,14 @@
       background-position: center;
       background-attachment: fixed;
       margin: 0;
+      position: relative;
+      overflow-x: hidden;
     }
 
     .logo-container {
       position: relative;
       display: inline-block;
+      z-index: 1;
     }
 
     .logo-container img {
@@ -41,6 +44,8 @@
       pointer-events: none;
       user-select: none;
       z-index: 0;
+      mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
     }
 
     h1.logo {
@@ -51,8 +56,18 @@
       user-select: none;
       text-shadow: 0 0 5px #ff3c3c;
       color: #ff3c3c;
+      z-index: 2;
       position: relative;
-      z-index: 1;
+    }
+
+    .subtitle {
+      color: #ff3c3c;
+      font-family: 'Pcfont', sans-serif;
+      font-size: 1.2rem;
+      margin-top: -10px;
+      margin-bottom: 40px;
+      text-shadow: 0 0 5px #ff3c3c;
+      user-select: none;
     }
 
     @keyframes pulse {
@@ -64,16 +79,6 @@
         text-shadow: 0 0 15px #ff0000;
         color: #ff6666;
       }
-    }
-
-    .subtitle {
-      color: #ff3c3c;
-      font-family: 'Pcfont', sans-serif;
-      font-size: 1.2rem;
-      margin-top: -10px;
-      margin-bottom: 40px;
-      text-shadow: 0 0 5px #ff3c3c;
-      user-select: none;
     }
 
     a.pulse-button {
@@ -97,13 +102,6 @@
       background-color: #ff3c3c;
       color: #111;
       animation: none;
-    }
-
-    .shipping-note {
-      margin-top: 20px;
-      color: #ff9999;
-      font-size: 0.9rem;
-      user-select: none;
     }
 
     .faq {
@@ -151,22 +149,23 @@
       max-height: 300px;
       padding-bottom: 10px;
     }
+
+    .shipping-note {
+      margin-top: 20px;
+      color: #ff9999;
+      font-size: 0.9rem;
+      user-select: none;
+    }
   </style>
 </head>
 <body>
-
   <div class="logo-container">
-    <img src="images/logo.png" alt="Logo Piccioni Morti">
+    <img src="images/logo.png" alt="Logo Piccioni Morti" />
     <h1 class="logo">PICCIONI MORTI</h1>
   </div>
-
   <p class="subtitle">underground typa shi</p>
-
   <a href="merch.html" class="pulse-button">ENTRA NEL NIDO</a>
-
-  <p class="shipping-note">
-    *Spedizione NON inclusa, i costi variano.
-  </p>
+  <p class="shipping-note">*Spedizione NON inclusa, i costi variano.</p>
 
   <section id="faq" class="faq">
     <h2>Domande Frequenti</h2>
@@ -216,6 +215,5 @@
       });
     });
   </script>
-
 </body>
 </html>
