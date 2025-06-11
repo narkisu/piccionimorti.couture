@@ -25,36 +25,6 @@
       margin: 0;
     }
 
-    @keyframes pulse {
-      0%, 100% {
-        text-shadow: 0 0 5px #ff3c3c;
-        color: #ff3c3c;
-      }
-      50% {
-        text-shadow: 0 0 15px #ff0000;
-        color: #ff6666;
-      }
-    }
-
-    @keyframes glitchMove {
-      0% {
-        transform: translate(-50%, -50%) skew(0deg, 0deg) scale(1);
-        opacity: 0.08;
-      }
-      33% {
-        transform: translate(-49%, -51%) skew(0.2deg, -0.2deg) scale(1.01);
-        opacity: 0.1;
-      }
-      66% {
-        transform: translate(-51%, -49%) skew(-0.2deg, 0.2deg) scale(1.02);
-        opacity: 0.09;
-      }
-      100% {
-        transform: translate(-50%, -50%) skew(0deg, 0deg) scale(1);
-        opacity: 0.08;
-      }
-    }
-
     .logo-container {
       position: relative;
       display: inline-block;
@@ -65,17 +35,16 @@
       position: absolute;
       top: 50%;
       left: 50%;
+      width: 300px;
       transform: translate(-50%, -50%);
-      opacity: 0.08;
-      width: 400px;
-      z-index: 0;
-      animation: glitchMove 3s infinite alternate;
+      opacity: 0.15;
       pointer-events: none;
+      user-select: none;
     }
 
     h1.logo {
       font-size: 4rem;
-      animation: pulse 2s infinite;
+      animation: glitch 2s infinite;
       cursor: default;
       user-select: none;
       text-shadow: 0 0 5px #ff3c3c;
@@ -84,9 +53,17 @@
       z-index: 1;
     }
 
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-1px, 1px); }
+      40% { transform: translate(1px, -1px); }
+      60% { transform: translate(-2px, 2px); }
+      80% { transform: translate(2px, -1px); }
+      100% { transform: translate(0); }
+    }
+
     .subtitle {
       color: #ff3c3c;
-      font-family: 'Pcfont', sans-serif;
       font-size: 1.2rem;
       margin-top: -10px;
       margin-bottom: 40px;
@@ -115,6 +92,17 @@
       background-color: #ff3c3c;
       color: #111;
       animation: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        text-shadow: 0 0 5px #ff3c3c;
+        color: #ff3c3c;
+      }
+      50% {
+        text-shadow: 0 0 15px #ff0000;
+        color: #ff6666;
+      }
     }
 
     .faq {
@@ -172,17 +160,13 @@
   </style>
 </head>
 <body>
-
   <div class="logo-container">
-    <img src="images/logo.png" alt="logo" />
+    <img src="images/logo.png" alt="Logo Piccioni Morti" />
     <h1 class="logo">PICCIONI MORTI</h1>
   </div>
-
   <p class="subtitle">underground typa shi</p>
   <a href="merch.html" class="pulse-button">ENTRA NEL NIDO</a>
-  <p class="shipping-note">
-    *Spedizione NON inclusa, i costi variano.
-  </p>
+  <p class="shipping-note">*Spedizione NON inclusa, i costi variano.</p>
 
   <section id="faq" class="faq">
     <h2>Domande Frequenti</h2>
@@ -190,7 +174,7 @@
     <div class="faq-item">
       <button class="faq-question">Spedite ovunque?</button>
       <div class="faq-answer">
-        <p>Dipende. Spedisco in tutta Italia, ma i costi variano in base a dove vivi. La spedizione avverrà solo dopo il ricevimento del bonifico, per ora nessuna spedizione fuori Italia.</p>
+        <p>Dipende. Spedisco in tutta Italia, ma i costi variano in base a dove vivi. La spedizione avverrà solo dopo il ricevimento del bonifico. Per ora, nessuna spedizione fuori Italia.</p>
       </div>
     </div>
 
