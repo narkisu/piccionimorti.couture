@@ -3,72 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PICCIONI MORTI - Home</title>
+  <title>PICCIONI MORTI</title>
   <style>
     @font-face {
       font-family: 'Pcfont';
       src: url('font/Pcfont-Regular.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
     }
 
     body {
       font-family: 'Pcfont', sans-serif;
       background-color: #111;
       color: white;
-      text-align: center;
+      margin: 0;
       padding: 50px 20px;
+      text-align: center;
       background-image: url('images/pexels-mariano-di-luch-679379189-29544928.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      margin: 0;
+      overflow-x: hidden;
     }
 
-    .logo-container {
+    .logo-wrapper {
       position: relative;
       display: inline-block;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
     }
 
-    .logo-container img {
+    .logo-wrapper img {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 300px;
       transform: translate(-50%, -50%);
-      opacity: 0.15;
+      width: 300px;
+      opacity: 0.3;
+      filter: blur(2px) contrast(150%) brightness(80%);
       pointer-events: none;
       user-select: none;
+      z-index: 0;
+      mix-blend-mode: lighten;
+      animation: logo-float 4s infinite ease-in-out;
     }
 
-    h1.logo {
+    @keyframes logo-float {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -52%) scale(1.02); }
+    }
+
+    h1.logo-text {
       font-size: 4rem;
-      animation: glitch 2s infinite;
-      cursor: default;
-      user-select: none;
-      text-shadow: 0 0 5px #ff3c3c;
-      color: #ff3c3c;
       position: relative;
       z-index: 1;
+      color: #ff3c3c;
+      animation: glitch-pulse 1.5s infinite ease-in-out;
+      user-select: none;
+      margin: 0;
+      text-shadow: 
+        0 0 3px #ff3c3c,
+        1px 1px 0 #ff1c1c,
+        -1px -1px 0 #ff5c5c;
     }
 
-    @keyframes glitch {
-      0% { transform: translate(0); }
-      20% { transform: translate(-1px, 1px); }
-      40% { transform: translate(1px, -1px); }
-      60% { transform: translate(-2px, 2px); }
-      80% { transform: translate(2px, -1px); }
-      100% { transform: translate(0); }
+    @keyframes glitch-pulse {
+      0%, 100% {
+        transform: translate(0, 0);
+        text-shadow: 0 0 5px #ff3c3c, 1px 1px 0 #ff1c1c, -1px -1px 0 #ff5c5c;
+      }
+      33% {
+        transform: translate(-1px, 1px);
+        text-shadow: -1px 1px 0 #ff0000, 2px 2px 1px #ff6666;
+      }
+      66% {
+        transform: translate(1px, -1px);
+        text-shadow: 2px -2px 0 #ff0000, -2px 2px 1px #ff9999;
+      }
     }
 
     .subtitle {
-      color: #ff3c3c;
-      font-size: 1.2rem;
       margin-top: -10px;
       margin-bottom: 40px;
+      color: #ff3c3c;
+      font-size: 1.2rem;
       text-shadow: 0 0 5px #ff3c3c;
-      user-select: none;
     }
 
     a.pulse-button {
@@ -85,7 +101,6 @@
       text-decoration: none;
       display: inline-block;
       transition: background-color 0.3s ease;
-      user-select: none;
     }
 
     a.pulse-button:hover {
@@ -96,125 +111,27 @@
 
     @keyframes pulse {
       0%, 100% {
-        text-shadow: 0 0 5px #ff3c3c;
-        color: #ff3c3c;
+        box-shadow: 0 0 5px #ff3c3c;
       }
       50% {
-        text-shadow: 0 0 15px #ff0000;
-        color: #ff6666;
+        box-shadow: 0 0 20px #ff3c3c;
       }
-    }
-
-    .faq {
-      margin-top: 60px;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .faq h2 {
-      font-size: 2rem;
-      color: #ff3c3c;
-      margin-bottom: 20px;
-    }
-
-    .faq-item {
-      text-align: left;
-      border-bottom: 1px solid #ff3c3c;
-      margin-bottom: 10px;
-    }
-
-    .faq-question {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.1rem;
-      padding: 15px;
-      width: 100%;
-      text-align: left;
-      cursor: pointer;
-      font-family: 'Pcfont', sans-serif;
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      padding: 0 15px;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 300px;
-      padding-bottom: 10px;
     }
 
     .shipping-note {
       margin-top: 20px;
       color: #ff9999;
       font-size: 0.9rem;
-      user-select: none;
     }
   </style>
 </head>
 <body>
-  <div class="logo-container">
+  <div class="logo-wrapper">
     <img src="images/logo.png" alt="Logo Piccioni Morti" />
-    <h1 class="logo">PICCIONI MORTI</h1>
+    <h1 class="logo-text">PICCIONI MORTI</h1>
   </div>
   <p class="subtitle">underground typa shi</p>
   <a href="merch.html" class="pulse-button">ENTRA NEL NIDO</a>
   <p class="shipping-note">*Spedizione NON inclusa, i costi variano.</p>
-
-  <section id="faq" class="faq">
-    <h2>Domande Frequenti</h2>
-
-    <div class="faq-item">
-      <button class="faq-question">Spedite ovunque?</button>
-      <div class="faq-answer">
-        <p>Dipende. Spedisco in tutta Italia, ma i costi variano in base a dove vivi. La spedizione avverrà solo dopo il ricevimento del bonifico. Per ora, nessuna spedizione fuori Italia.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">Quanto ci mette ad arrivare?</button>
-      <div class="faq-answer">
-        <p>Dipende. 3–7 giorni lavorativi. Ma è un progetto artigianale, non sono Amazon Prime.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">Come vengono prodotti?</button>
-      <div class="faq-answer">
-        <p>Ogni pezzo è cucito a mano da me stesso, niente roba fast fashion.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">Posso fare un reso?</button>
-      <div class="faq-answer">
-        <p>Solo se ti arriva distrutto. In quel caso, scrivimi entro 7 giorni.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">È possibile personalizzarlo?</button>
-      <div class="faq-answer">
-        <p>Se hai un'idea, scrivimi. Se gasa, la cucio.</p>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
-      question.addEventListener('click', () => {
-        item.classList.toggle('active');
-      });
-    });
-  </script>
 </body>
 </html>
